@@ -1,0 +1,23 @@
+﻿@model LearningSystem.Models.ViewModels.Blog.AddArticleVM
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Add Article";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+
+    <div class="form-group">
+        @Html.LabelFor(vm => vm.Title )
+        @Html.EditorFor(vm => vm.Title, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(vm => vm.Content)
+        @Html.TextAreaFor(vm => vm.Content, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="form-control" />
+    </div>
+}
+
